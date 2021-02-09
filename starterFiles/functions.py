@@ -10,7 +10,7 @@ nltk.download('stopwords')
 
 def categorize_words():
     '''
-    Catagorizes each spam/non-spam word into a corresponding list
+    Catagories each spam/non-spam word into a corresponding list
     Repeating words in each list will help with categorizing
     '''
     spam_words = []
