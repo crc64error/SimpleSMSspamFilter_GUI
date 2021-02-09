@@ -38,7 +38,7 @@ def check_spam(sender, data, pred =[]):
 set_main_window_size(540, 720)
 set_global_font_scale(1.25)
 set_theme("Gold")
-set_style_window_padding(30,30)
+set_style_window_padding(30, 30)
 
 with window("Simple SMS Spam Filter", width=520, height=677):
     print("GUI is running...")

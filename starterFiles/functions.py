@@ -10,7 +10,7 @@ nltk.download('stopwords')
 
 def categorize_words():
     '''
-    Catagories each spam/non-spam word into a corresponding list
+    Catagorizes each spam/non-spam word into a corresponding list
     Repeating words in each list will help with categorizing
     '''
     spam_words = []
@@ -24,26 +24,26 @@ def categorize_words():
     return spam_words, ham_words
 
 def predict(user_input):
-spam_counter = 0
-ham_counter = 0
+    spam_counter = 0
+    ham_counter = 0
 
-#add text colour : ham is green, spam is red
-red = [220,50,50]
-green = [100,220,50]
+    #add text colour : ham is green, spam is red
+    red = [220,50,50]
+    green = [100,220,50]
 
-for word in user_input:
-    spam_counter += spam_words.count(word)
-    ham_counter += ham_words.count(word)
+    for word in user_input:
+        spam_counter += spam_words.count(word)
+        ham_counter += ham_words.count(word)
 
-if ham_counter > spam_counter:
-    #adding accuracy
-    certainty = round((ham_counter / (ham_counter + spam_counter)) * 100, 2)
-    return 'message is not spam, with {}% certainty'.format(certainty), green
-elif spam_counter > ham_counter:
-    certainty = round((spam_counter / (ham_counter + spam_counter)) * 100, 2)
-    return 'message is spam, with {}% certainty'.format(certainty), red
-else:
-    return 'message could be spam, with 50% certainty', [255,255,255]
+    if ham_counter > spam_counter:
+        #adding accuracy
+        certainty = round((ham_counter / (ham_counter + spam_counter)) * 100, 2)
+        return 'message is not spam, with {}% certainty'.format(certainty), green
+    elif spam_counter > ham_counter:
+        certainty = round((spam_counter / (ham_counter + spam_counter)) * 100, 2)
+        return 'message is spam, with {}% certainty'.format(certainty), red
+    else:
+        return 'message could be spam, with 50% certainty', [255,255,255]
 
 def pre_process(sms):
     '''
